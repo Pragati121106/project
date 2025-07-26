@@ -1,0 +1,100 @@
+<!-- Updated home.html with friend section link -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Header -->
+  <section class="home-hero">
+    <div class="home-topbar">
+      <img src="logo.jpg" alt="MindEase Logo">
+      <div class="top-icons">
+        <span class="icon">🔔</span>
+        <span class="icon">⚙️</span>
+        <span class="profile">👤</span>
+      </div>
+    </div>
+    <div class="welcome-text">
+      <h2>Welcome to your calm corner, User!</h2>
+      <p>"You are enough. You always were."</p>
+    </div>
+  </section>
+
+  <!-- Mood Check-in -->
+  <section class="mood-check">
+    <h3>How are you feeling today?</h3>
+    <div class="mood-options">
+      <button class="mood" onclick="showQuote('Amazing')">⭐<br>Amazing</button>
+      <button class="mood" onclick="showQuote('Good')">😊<br>Good</button>
+      <button class="mood" onclick="showQuote('Okay')">😐<br>Okay</button>
+      <button class="mood" onclick="showQuote('Low')">😔<br>Low</button>
+      <button class="mood" onclick="showQuote('Struggling')">💔<br>Struggling</button>
+    </div>
+    <button class="save-btn">Save Mood Check-in</button>
+  </section>
+
+  <!-- Section Cards -->
+  <section class="card-section">
+    <!-- Row 1: Wellness + Mini-Games -->
+    <div class="card-grid two-columns">
+      <div class="card" onclick="openActivityPopup()">
+        <img src="images/wellness.png" class="card-icon" alt="Wellness">
+        <h4>Wellness Activities</h4>
+        <p>“Challenge to uplift your mind”</p>
+      </div>
+      <div class="card" onclick="openGamesPopup()">
+        <img src="images/game.png" class="card-icon" alt="Games">
+        <h4>Mini-Games</h4>
+        <p>“Let the game lighten your heart and sharpen your mind”</p>
+      </div>
+    </div>
+
+    <!-- Row 2: Journal split layout -->
+    <div class="card-grid full-width contact-split">
+      <div class="card contact-box">
+        <h4>Personal Journal</h4>
+        <p>“Your thoughts matter. Write them down and let them breathe”</p>
+      </div>
+      <div class="card contact-image">
+        <img src="images/journaling.webp" alt="Journal" />
+      </div>
+    </div>
+
+    <!-- Row 3: Friend split layout with link -->
+    <div class="card-grid full-width contact-split" onclick="location.href='friend.html'" style="cursor: pointer;">
+      <div class="card contact-box">
+        <h4>Your Friend - Alex!</h4>
+        <p>“Sometimes, just talking helps — try saying what's on your mind”</p>
+      </div>
+      <div class="card contact-image">
+        <img src="images/friend1.jpg" alt="Friend Icon" />
+      </div>
+    </div>
+
+    <!-- Row 4: Contact split layout -->
+    <div class="card-grid full-width contact-split" onclick="location.href='contact.html'" style="cursor: pointer;">
+      <div class="card contact-box">
+        <h4>Contact</h4>
+        <p>“Meet the Experts Who Care About You”</p>
+      </div>
+      <div class="card contact-image">
+        <img src="images/cont.jpg" alt="Therapist in session" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">🔵 <strong>MindEase</strong></div>
+    <div class="footer-text">A gentle space to heal, reflect, and grow.</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>
+

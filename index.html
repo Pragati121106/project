@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindEase - Welcome</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: url('bk.jpg') no-repeat center center/cover;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(20, 30, 60, 0.5);
+      backdrop-filter: blur(8px);
+      color: white;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .navbar nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar nav a:hover {
+      color: #cbd4f7;
+    }
+
+    .landing-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      backdrop-filter: brightness(0.6);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .landing-box {
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      max-width: 600px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .landing-box h1 {
+      color: #354275;
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .landing-box p {
+      color: beige;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .start-button {
+      background-color: #ffffff;
+      color: #354275;
+      font-weight: 600;
+      padding: 14px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .start-button:hover {
+      background-color: #e5e9f5;
+      transform: translateY(-2px);
+    }
+
+    .about-section {
+      background-color: #5e6d96;
+      padding: 60px 20px;
+      color: #fff;
+      text-align: left;
+    }
+
+    .about-section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .about-intro {
+      background-color: #7986b5;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .about-features {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .feature img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .feature p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .feature strong {
+      font-weight: 600;
+    }
+
+    footer {
+      background-color: #354275;
+      padding: 20px;
+      text-align: center;
+      color: #d3d9ff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .landing-box {
+        padding: 25px;
+      }
+
+      .about-intro, .about-features {
+        padding: 20px;
+      }
+
+      .feature {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="MindEase Logo">
+      <span class="logo-text">MindEase</span>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="home.html">Get Started</a>
+    </nav>
+  </header>
+
+  <div class="landing-container">
+    <div class="landing-box">
+      <h1>MindEase</h1>
+      <p>A gentle space to heal, reflect, and grow.</p>
+      <button class="start-button" onclick="location.href='home.html'">Start</button>
+    </div>
+  </div>
+
+  <section id="about" class="about-section">
+    <h2>ABOUT</h2>
+    <div class="about-intro">
+      At MindEase, we believe that mental wellness should be simple, supportive, and accessible for everyone. Our platform is designed to help you navigate your emotional journey with gentle tools that truly care. Whether you're feeling happy, anxious, overwhelmed, or just need a quiet moment, we’re here for you.
+    </div>
+
+    <div class="about-features">
+      <div class="feature">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/change-of-mood-icon.png" alt="Mood Check-ins">
+        <p><strong>Daily mood check-ins</strong> to understand your emotional patterns</p>
+      </div>
+      <div class="feature">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/hand-gestures/like-button-icon.png" alt="Motivational Quotes">
+        <p><strong>Motivational quotes</strong> to uplift your spirit</p>
+      </div>
+      <div class="feature">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/seo-marketing/target-goals-icon.svg" alt="Challenges">
+        <p><strong>Challenges</strong> to uplift your mind and keep you engaged</p>
+      </div>
+      <div class="feature">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/sport-and-awards/video-game-gamepad-icon.png" alt="Mini-Games">
+        <p><strong>Mini-games</strong> to calm the mind and sharpen focus</p>
+      </div>
+      <div class="feature">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/education-school/study-icon.png" alt="Journaling">
+        <p>A space for <strong>personal journaling</strong></p>
+      </div>
+      <div class="feature">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-followers-icon.png" alt="Virtual Friend">
+        <p>A comforting <strong>virtual friend</strong> — you get to choose their name and character, making it your own unique emotional companion</p>
+      </div>
+      <div class="feature">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/medical-science-lab/homeopathic-doctor-icon.png" alt="Therapist Access">
+        <p>Easy access to <strong>therapist</strong> and <strong>doctor profiles</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 MindEase - A gentle space to heal, reflect, and grow.
+  </footer>
+</body>
+</html>

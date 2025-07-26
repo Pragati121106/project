@@ -1,0 +1,253 @@
+/*style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #5e6d96;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+h2,p{
+  color: #354275;
+}
+
+p {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Top Bar */
+.home-hero {
+  background: url('bk.jpg') center/cover no-repeat;
+  padding: 20px 30px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+.home-topbar img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  
+.top-icons .icon, .top-icons .profile {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.welcome-text {
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Mood Check-in */
+.mood-check {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #7986b5;
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+.mood-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.mood {
+  background: white;
+  color: #354275;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  width: 100px;
+  transition: all 0.3s ease;
+}
+
+.mood:hover {
+  background-color: #e6eaf6;
+  transform: translateY(-2px);
+}
+
+.save-btn {
+  background-color: #354275;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 14px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Card Layout */
+.card-section {
+  background-color: #5e6d96;
+  padding: 50px 20px;
+}
+
+.card-grid.two-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #7986b5;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background-color: #6c7cb0;
+}
+
+.card-icon {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.card h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #e0e0e0;
+}
+
+/* Strict Left-Right Split Layout */
+.contact-split {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-height: 280px;
+}
+
+.contact-box {
+  background-color: #354275;
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  /* Removed border-radius to blend with image side */
+  border-radius: 0;
+}
+
+.contact-box h4 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.contact-box p {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  max-width: 80%;
+}
+
+.contact-image {
+  flex: 1;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* Footer */
+footer {
+  background-color: #3c466f;
+  text-align: center;
+  padding: 20px 15px;
+  font-size: 14px;
+}
+
+.footer-logo {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.footer-text {
+  font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-grid.two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .home-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .welcome-text {
+    text-align: center;
+  }
+
+  .contact-split {
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .contact-box, .contact-image {
+    border-radius: 0;
+  }
+
+  .contact-image img {
+    height: auto;
+  }
+}
+
+
