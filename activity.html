@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Challenge - MindEase</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #5e6d96;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .tracker {
+      margin-bottom: 30px;
+    }
+
+    .tracker .days {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .tracker .days div {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: #cfd7f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .tracker .streak {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .task-card {
+      background-color: #3c466f;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      margin: 0 auto 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .task-card h2 {
+      margin-bottom: 10px;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .task-card h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #f9f9f9;
+    }
+
+    .task-card p {
+      font-size: 16px;
+      color: #e0e0e0;
+    }
+
+    .task-image {
+      width: 180px;
+      margin: 20px auto;
+    }
+
+    .task-actions {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .task-actions button {
+      background-color: #f1f4ff;
+      color: #2c3e50;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .task-actions button:hover {
+      background-color: #dee6ff;
+    }
+
+    .quote-bar {
+      margin-top: 30px;
+      background-color: #7986b5;
+      padding: 15px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .quote-bar p {
+      margin: 0;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    footer {
+      margin-top: 40px;
+      background-color: #3c466f;
+      padding: 20px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .footer-logo {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="tracker">
+    <h4>🌙 Weekly Calm Tracker 🌙</h4>
+    <div class="days">
+      <div style="background:#7ed957">M</div>
+      <div style="background:#7ed957">T</div>
+      <div style="background:#7ed957">W</div>
+      <div style="background:#ffc93c">T</div>
+      <div style="background:#fff">F</div>
+      <div style="background:#fff">S</div>
+      <div style="background:#fff">S</div>
+    </div>
+    <div class="streak">
+      <strong>3-Day Streak</strong> ✨ Keep the calm flowing
+    </div>
+  </div>
+
+  <div class="task-card">
+    <div style="text-align:left;font-size:14px;color:#ccc;">Add To Favourite ❤️</div>
+    <h2>Your Gentle Task for Today</h2>
+    <h1 id="task-title">Breathe & Ground</h1>
+    <p id="task-desc">Close your eyes. Inhale for 4, hold for 4, exhale for 6. Repeat 3 times.</p>
+    <img src="data:image/png;base64,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" alt="Meditation Icon" class="task-image" />
+    <div class="task-actions">
+      <button onclick="startTask()">Start This Activity</button>
+      <button onclick="newTask()">Try a New One</button>
+    </div>
+  </div>
+
+  <div class="quote-bar">
+    <p>You don’t have to do it all today. Just one small thing is enough.</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">🔵 MindEase</div>
+    <div>A gentle space to heal, reflect, and grow.</div>
+  </footer>
+
+  <script>
+    const tasks = [
+      {
+        title: "Breathe & Ground",
+        desc: "Close your eyes. Inhale for 4, hold for 4, exhale for 6. Repeat 3 times.",
+        img: "images/meditation.png"
+      },
+      {
+        title: "Gratitude Note",
+        desc: "Write down 3 things you're grateful for today.",
+        img: "images/journal.png"
+      },
+      {
+        title: "Mindful Walk",
+        desc: "Take a short walk. Focus on what you see, hear, and feel.",
+        img: "images/walk.png"
+      },
+      {
+        title: "Positive Affirmations",
+        desc: "Say or write down 3 positive affirmations about yourself.",
+        img: "images/affirmation.png"
+      }
+    ];
+
+    function newTask() {
+      const random = tasks[Math.floor(Math.random() * tasks.length)];
+      document.getElementById('task-title').textContent = random.title;
+      document.getElementById('task-desc').textContent = random.desc;
+      document.querySelector('.task-image').src = random.img;
+    }
+
+    function startTask() {
+      alert("Let's begin! Take your time and enjoy the process.");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Games - MindEase</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #5e6d96;
+      color: #fff;
+    }
+
+    .games-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .games-header {
+      margin-bottom: 30px;
+    }
+
+    .games-header h1 {
+      font-size: 36px;
+      color: #ffffff;
+    }
+
+    .wheel-link {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .wheel-link img {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .game-card {
+      background-color: #465686;
+      border-radius: 20px;
+      padding: 25px;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .game-card:hover {
+      background-color: #3a486d;
+    }
+
+    .game-card img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .game-card h3 {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .game-card p {
+      font-size: 14px;
+      color: #d8e0f0;
+      margin-bottom: 15px;
+    }
+
+    .play-btn {
+      background-color: #ffffff;
+      color: #354275;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .play-btn:hover {
+      background-color: #e0e4f5;
+    }
+
+    .games-quote {
+      margin-top: 40px;
+      background-color: #8f9cc7;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #222;
+    }
+
+    footer {
+      margin-top: 40px;
+      background-color: #3c466f;
+      padding: 20px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .footer-logo {
+      font-weight: 600;
+    }
+
+    footer .logo span {
+      background-color: #8cbce8;
+      color: #fff;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="games-container">
+    <div class="games-header">
+      <h1>Mini Games</h1>
+    </div>
+
+
+    <div class="game-grid">
+      <div class="game-card">
+        <img src="images/clouds.png" alt="Cloud Pop" />
+        <h3>Cloud Pop</h3>
+        <p>Tap clouds and discover calming affirmations.</p>
+        <button class="play-btn">Play Now</button>
+      </div>
+
+      <div class="game-card">
+        <img src="images/puzzle.png" alt="Zen Puzzle" />
+        <h3>Zen Puzzle</h3>
+        <p>Rebuild serene images at your own pace.</p>
+        <button class="play-btn">Play Now</button>
+      </div>
+
+      <div class="game-card">
+        <img src="images/color.png" alt="Color Me Calm" />
+        <h3>Color Me Calm</h3>
+        <p>Color mandalas or nature scenes digitally.</p>
+        <button class="play-btn">Play Now</button>
+      </div>
+
+      <div class="game-card">
+        <img src="images/sound.png" alt="Sound Spa" />
+        <h3>Sound Spa</h3>
+        <p>Match peaceful sounds like rain, chimes & birds.</p>
+        <button class="play-btn">Play Now</button>
+      </div>
+
+      <div class="game-card">
+        <img src="images/tile.png" alt="Mood Tiles" />
+        <h3>Mood Tiles</h3>
+        <p>Match moods with calming symbols in a game of reflection.</p>
+        <button class="play-btn">Play Now</button>
+      </div>
+    </div>
+
+    <div class="games-quote">
+      Sometimes, the best way to think clearly is to stop thinking and just play.
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">🔵 MindEase</div>
+    <div>A gentle space to heal, reflect, and grow.</div>
+  </footer>
+</body>
+</html>
