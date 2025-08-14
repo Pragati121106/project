@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MindEase - Welcome</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="main.js"></script>
+
   <style>
     body, html {
       margin: 0;
@@ -242,6 +244,87 @@
       </div>
     </div>
   </section>
+
+
+
+  <div class="auth-container">
+  <div class="form-box">
+    <h1 class="logo-text">MindEase</h1>
+    <h2 id="form-title">Login</h2>
+    <div class="input-group">
+      <input type="text" id="username" placeholder="Username" required>
+    </div>
+    <div class="input-group">
+      <input type="password" id="password" placeholder="Password" required>
+    </div>
+    <button class="auth-btn" onclick="handleAuth()">Login</button>
+    <p id="toggle-text">Don't have an account? <a onclick="toggleForm()">Sign up</a></p>
+  </div>
+</div>
+
+<style>
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(8px);
+  }
+  .form-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    text-align: center;
+    color: white;
+    width: 320px;
+    animation: fadeIn 0.5s ease;
+  }
+  .logo-text {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #354275;
+  }
+  .input-group {
+    margin: 10px 0;
+  }
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  .auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6dd5fa, #2980b9);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+  }
+  .auth-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #6dd5fa);
+  }
+  a {
+    color:#6dd5fa ;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+
 
   <footer>
     © 2025 MindEase - A gentle space to heal, reflect, and grow.
