@@ -1,4 +1,4 @@
-<!-- Updated home.html with friend section link -->
+<!--  home.html  -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,12 +14,13 @@
       <img src="logo.jpg" alt="MindEase Logo">
       <div class="top-icons">
         <span class="icon">🔔</span>
-        <span class="icon">⚙️</span>
-        <span class="profile">👤</span>
+        <span class="icon" onclick="location.href='setting.html'" style="cursor:pointer;">⚙️</span>
+        <span class="profile" onclick="location.href='profile.html'" style="cursor:pointer;">👤</span>
+
       </div>
     </div>
     <div class="welcome-text">
-      <h2>Welcome to your calm corner, User!</h2>
+      <h2>Welcome to your calm corner, <span id="username-placeholder"></span>!</h2>
       <p>"You are enough. You always were."</p>
     </div>
   </section>
@@ -34,19 +35,19 @@
       <button class="mood" onclick="showQuote('Low')">😔<br>Low</button>
       <button class="mood" onclick="showQuote('Struggling')">💔<br>Struggling</button>
     </div>
-    <button class="save-btn">Save Mood Check-in</button>
+    <button class="save-btn" onclick="saveMood()">Save Mood Check-in</button>
   </section>
 
   <!-- Section Cards -->
   <section class="card-section">
     <!-- Row 1: Wellness + Mini-Games -->
     <div class="card-grid two-columns">
-      <div class="card" onclick="openActivityPopup()">
+      <div class="card" onclick="location.href='activity.html'">
         <img src="images/wellness.png" class="card-icon" alt="Wellness">
         <h4>Wellness Activities</h4>
         <p>“Challenge to uplift your mind”</p>
       </div>
-      <div class="card" onclick="openGamesPopup()">
+      <div class="card" onclick="location.href='game.html'">
         <img src="images/game.png" class="card-icon" alt="Games">
         <h4>Mini-Games</h4>
         <p>“Let the game lighten your heart and sharpen your mind”</p>
@@ -54,7 +55,7 @@
     </div>
 
     <!-- Row 2: Journal split layout -->
-    <div class="card-grid full-width contact-split">
+    <div class="card-grid full-width contact-split" onclick="location.href='journal.html'" style="cursor: pointer;">
       <div class="card contact-box">
         <h4>Personal Journal</h4>
         <p>“Your thoughts matter. Write them down and let them breathe”</p>
@@ -97,4 +98,7 @@
   <script src="main.js"></script>
 </body>
 </html>
+
+
+
 
