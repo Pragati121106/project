@@ -1,0 +1,244 @@
+<!-- setting.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindEase Settings</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0f2c, #1a103f);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(20, 20, 50, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.4);
+  }
+
+  .settings-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.15);
+    transition: 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 0 25px rgba(0, 204, 255, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .card h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #00ccff;
+    text-shadow: 0 0 8px rgba(0, 204, 255, 0.8);
+  }
+
+  .form-group {
+    margin: 15px 0;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+  }
+
+  input:focus, select:focus {
+    box-shadow: 0 0 8px #00ccff;
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toggle input {
+    width: 50px;
+    height: 25px;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .toggle input:checked {
+    background: #00ccff;
+  }
+
+  .toggle input::before {
+    content: '';
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: white;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+  }
+
+  .toggle input:checked::before {
+    transform: translateX(25px);
+  }
+
+  button {
+    background: #00ccff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #00e6ff;
+    box-shadow: 0 0 10px #00ccff;
+  }
+</style>
+</head>
+<body>
+
+<header>⚙ Settings</header>
+
+<div class="settings-container">
+
+  <div class="card">
+    <h2>Account Settings</h2>
+    <div class="form-group">
+      <label>Change Name</label>
+      <input type="text" id="name" placeholder="Enter new name">
+    </div>
+    <div class="form-group">
+      <label>Change Email</label>
+      <input type="email" id="email" placeholder="Enter new email">
+    </div>
+    <div class="form-group">
+      <label>Change Password</label>
+      <input type="password" id="password" placeholder="Enter new password">
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>App Preferences</h2>
+    <div class="form-group">
+      <label>Theme</label>
+      <select id="theme">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+        <option value="auto">Auto</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Font Size</label>
+      <select id="fontSize">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Language</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="hi">Hindi</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Motivation Settings</h2>
+    <div class="form-group toggle">
+      <label for="dailyQuote">Daily Quote</label>
+      <input type="checkbox" id="dailyQuote">
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Privacy & Security</h2>
+    <button onclick="logout()">Logout</button>
+    <button onclick="deleteAccount()" style="background: red; color: white; margin-left: 10px;">Delete Account</button>
+  </div>
+
+</div>
+
+<script>
+  const settings = ['name','email','theme','fontSize','language','dailyQuote'];
+
+  // Load saved settings
+  window.onload = () => {
+    settings.forEach(key => {
+      const value = localStorage.getItem(key);
+      if (value !== null) {
+        if (key === 'dailyQuote') {
+          document.getElementById(key).checked = value === 'true';
+        } else {
+          document.getElementById(key).value = value;
+        }
+      }
+    });
+  };
+
+  // Save settings on change
+  settings.forEach(key => {
+    const el = document.getElementById(key);
+    if (el) {
+      el.addEventListener(key === 'dailyQuote' ? 'change' : 'input', () => {
+        localStorage.setItem(key, key === 'dailyQuote' ? el.checked : el.value);
+      });
+    }
+  });
+
+  function logout() {
+    alert('Logged out!');
+  }
+
+  function deleteAccount() {
+    if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+      alert('Account deleted!');
+    }
+  }
+</script>
+
+</body>
+</html>
+

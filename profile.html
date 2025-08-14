@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Profile - MindEase</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d1a;
+    color: #fff;
+  }
+
+  /* Top Banner */
+  .banner {
+    position: relative;
+    height: 200px;
+    background: 
+      linear-gradient(135deg, rgba(10, 10, 25, 0.6), rgba(20, 20, 40, 0.6)), 
+      url('images/bbk.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  }
+
+  /* Profile Card */
+  .profile-card {
+    position: relative;
+    background: rgba(15, 15, 35, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 700px;
+    margin: -60px auto 20px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    transition: 0.3s ease;
+  }
+  .profile-card:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  }
+
+  /* Avatar */
+  .avatar {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #0ff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    background: linear-gradient(135deg, #0ff, #6d5efc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+  }
+  .edit-avatar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #0ff;
+    color: #000;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+
+  /* Info */
+  .profile-info h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff;
+  }
+  .profile-info p {
+    margin: 5px 0;
+    font-style: italic;
+    color: #ccc;
+  }
+  .streak {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(0, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: 6px;
+    color: #0ff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    transition: 0.3s ease;
+  }
+  .streak:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  }
+
+  /* Stats */
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    max-width: 700px;
+  }
+  .stat-box {
+    flex: 1;
+    margin: 5px;
+    background: rgba(15, 15, 35, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    transition: 0.3s ease;
+  }
+  .stat-box:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    transform: translateY(-3px);
+  }
+  .stat-box span {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 4px;
+    color: #0ff;
+  }
+
+  /* Buttons */
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  .btn {
+    padding: 10px 20px;
+    border: 1px solid #0ff;
+    background: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff;
+    transition: 0.3s ease;
+  }
+  .btn:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 15px #0ff;
+    transform: scale(1.05);
+  }
+  .btn.logout {
+    border-color: #f00;
+    color: #f66;
+    text-shadow: 0 0 5px #f00;
+  }
+  .btn.logout:hover {
+    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 0 15px #f00;
+  }
+
+  /* Quote */
+  .quote {
+    text-align: center;
+    font-style: italic;
+    color: #ccc;
+    padding: 10px;
+  }
+
+  /* Mood history */
+  .mood-history {
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .mood-history h3 {
+    color: #0ff;
+    text-shadow: 0 0 8px #0ff;
+    margin-bottom: 10px;
+  }
+  .mood-list {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .mood-item {
+    font-size: 28px;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(15, 15, 35, 0.7);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    cursor: default;
+    position: relative;
+    transition: 0.3s;
+  }
+  .mood-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #0ff;
+  }
+  .mood-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+  }
+  .mood-item:hover::after {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="banner" id="banner"></div>
+
+<div class="profile-card">
+  <div class="avatar" id="avatar-initials">
+    U
+    <div class="edit-avatar" onclick="changeAvatar()">✏️</div>
+  </div>
+  <div class="profile-info">
+    <h2 id="profile-username">User</h2>
+    <p id="profile-bio">"Living my best life"</p>
+    <div class="streak">🔥 7 days streak</div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat-box">📅 <span id="stat-mood">0</span> Moods</div>
+  <div class="stat-box">✅ <span id="stat-wellness">8</span> Activity</div>
+  <div class="stat-box">🎮 <span id="stat-games">5</span> Games</div>
+  <div class="stat-box">📓 <span id="stat-journals">14</span> Journals</div>
+</div>
+
+<div class="mood-history">
+  <h3>Recent Moods</h3>
+  <div class="mood-list" id="mood-list"></div>
+</div>
+
+<div class="actions">
+  <button class="btn edit" onclick="editProfile()">✏️ Edit Profile</button>
+  <button class="btn logout" onclick="logout()">🚪 Logout</button>
+</div>
+
+<div class="quote" id="quote">
+  "Your limitation—it's only your imagination."
+</div>
+
+<script>
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  if (!loggedInUser) {
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("profile-username").innerText = loggedInUser;
+    document.getElementById("avatar-initials").firstChild.textContent = loggedInUser.charAt(0).toUpperCase();
+  }
+
+  // Load and display mood history
+  let moodHistory = JSON.parse(localStorage.getItem(loggedInUser + "_moods")) || [];
+  document.getElementById("stat-mood").innerText = moodHistory.length;
+
+  const moodListEl = document.getElementById("mood-list");
+  const moodEmojis = {
+    "Amazing": "⭐",
+    "Good": "😊",
+    "Okay": "😐",
+    "Low": "😔",
+    "Struggling": "💔"
+  };
+
+  moodHistory.slice(-8).forEach(entry => {
+    let emoji = moodEmojis[entry.mood] || "❓";
+    let item = document.createElement("div");
+    item.className = "mood-item";
+    item.innerHTML = emoji;
+    item.setAttribute("data-tooltip", `${entry.mood} - ${entry.date}`);
+    moodListEl.appendChild(item);
+  });
+
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+  }
+  function changeAvatar() {
+    alert("Avatar upload feature coming soon!");
+  }
+  function editProfile() {
+    alert("Edit profile modal coming soon!");
+  }
+</script>
+
+</body>
+</html>
+
+
+
